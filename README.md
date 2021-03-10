@@ -16,6 +16,11 @@ A small script to activate Duo's HOTP code
 3. You'll get your HOTP secret with a counter, which starts from 0.
 
 ### Notes:
--  You can use a cli tool like `oathtool` to generate the passcode.
-- You cannot use managers like 1Password since they do not support HOTP.
-- You also need to ensure that the counter is incremented every time you login.
+- You can use a cli tool like `oathtool` to generate the passcode.
+    ```sh
+    # example
+    oathtool --hotp -b 'base32' -c 0
+   ```
+- You cannot use some managers like 1Password since they do not support HOTP.
+- Ensure that the counter is incremented _every time_ you login.
+- Other details: SHA1, 6 digits
